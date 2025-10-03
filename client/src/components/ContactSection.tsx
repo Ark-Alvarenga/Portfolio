@@ -136,7 +136,7 @@ const ContactSection: React.FC = () => {
                 
                 {/* LinkedIn */}
                 <motion.a
-                  href="#"
+                  href="https://www.linkedin.com/in/archimedes-alvarenga-5314b2211"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-secondary border border-border rounded-lg hover:border-primary/50 hover:bg-secondary/80 transition-all group"
@@ -154,7 +154,7 @@ const ContactSection: React.FC = () => {
                 
                 {/* Email */}
                 <motion.a
-                  href="mailto:contact@example.com"
+                  href="mailto:arkalvarenga@gmail.com"
                   className="flex items-center gap-4 p-4 bg-secondary border border-border rounded-lg hover:border-primary/50 hover:bg-secondary/80 transition-all group"
                   whileHover={{ x: 8 }}
                   data-testid="social-email"
@@ -164,7 +164,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p className="text-sm text-muted-foreground">contact@example.com</p>
+                    <p className="text-sm text-muted-foreground">arkalvarenga@gmail.com</p>
                   </div>
                 </motion.a>
               </div>
