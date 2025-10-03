@@ -54,25 +54,28 @@
   --ring: hsl(262, 83%, 58%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --background: hsl(240, 10%, 3.9%);
-    --foreground: hsl(0, 0%, 98%);
-    --card: hsl(240, 10%, 7%);
-    --card-foreground: hsl(0, 0%, 98%);
-    --primary: hsl(262, 83%, 58%);
-    --primary-foreground: hsl(0, 0%, 100%);
-    --secondary: hsl(240, 3.7%, 15.9%);
-    --secondary-foreground: hsl(0, 0%, 98%);
-    --muted: hsl(240, 3.7%, 15.9%);
-    --muted-foreground: hsl(240, 5%, 64.9%);
-    --accent: hsl(193, 95%, 68%);
-    --accent-foreground: hsl(0, 0%, 98%);
-    --border: hsl(240, 3.7%, 20%);
-    --input: hsl(207.6923, 27.6596%, 18.4314%);
-    --ring: hsl(262, 83%, 58%);
-  }
+.beach {
+  --background: #FDF6E3;       /* areia clara */
+  --foreground: #1B4332;       /* verde */
+  --card: #FDEBD0;             
+  --card-foreground: #1B4332;
+  --popover: #FDF6E3;
+  --popover-foreground: #1B4332;
+  --primary: #FFD700;          
+  --primary-foreground: #1B4332;
+  --secondary: #1E90FF;        
+  --secondary-foreground: #1B4332;
+  --muted: #FDF6E3;
+  --muted-foreground: #1B4332;
+  --accent: #1E90FF;
+  --accent-foreground: #FDF6E3;
+  --destructive: #FF4C4C;
+  --destructive-foreground: #FFFFFF;
+  --border: #CFCFCF;
+  --input: #FDF6E3;
+  --ring: #FFD700;
 }
+
 
 @layer base {
   * {

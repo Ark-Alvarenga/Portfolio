@@ -1,56 +1,46 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
+type Theme = 'light' | 'dark' | 'beach';
 
 interface ThemeContextType {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
+  toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
+  if (!context) throw new Error('useTheme must be used within ThemeProvider');
   return context;
 };
 
-interface ThemeProviderProps {
-  children: React.ReactNode;
-}
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Detecta o tema salvo ou fallback para prefers-color-scheme
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const storedTheme = localStorage.getItem('theme') as Theme | null;
+  const initialTheme: Theme = storedTheme ?? (prefersDark ? 'dark' : 'light');
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('system');
+  const [theme, setTheme] = useState<Theme>(initialTheme);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    
-    if (theme === 'system') {
-      const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.className = systemPreference;
-    } else {
-      root.className = theme;
-    }
-  }, [theme]);
+  const applyTheme = (themeToApply: Theme) => {
+    document.documentElement.classList.remove('light', 'dark', 'beach');
+    document.documentElement.classList.add(themeToApply);
+  };
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const handleChange = () => {
-      if (theme === 'system') {
-        const root = document.documentElement;
-        root.className = mediaQuery.matches ? 'dark' : 'light';
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    applyTheme(theme);
+    localStorage.setItem('theme', theme); // persiste no localStorage
   }, [theme]);
+
+  const toggleTheme = () => {
+    if (theme === 'light') setTheme('dark');
+    else if (theme === 'dark') setTheme('beach');
+    else setTheme('light');
+  };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );

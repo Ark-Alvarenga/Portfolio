@@ -75,6 +75,17 @@ npm run build
 npm start
 ```
 
+## 🛠 Backend (Optional)
+
+This project includes a basic Express server setup (`/server`) with example routes.
+It’s not used in the deployed portfolio, but can serve as a starting point if you want to extend this repo into a full-stack application.
+
+Run backend locally:
+
+```bash
+npm run dev
+```
+
 🌐 Deployment
 This portfolio is ready to be deployed on Vercel or any Node.js compatible hosting. Steps for Vercel:
 

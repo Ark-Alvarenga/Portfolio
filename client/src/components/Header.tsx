@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useScrollTo } from '../hooks/useScrollTo';
+import { useTheme } from './ThemeProvider';
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollToSection = useScrollTo();
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
     { label: 'Projects', id: 'projects' },
     { label: 'Features', id: 'features' },
-    { label: 'Contact', id: 'contact' }
+    { label: 'Contact', id: 'contact' },
   ];
 
   const handleNavClick = (sectionId: string) => {
@@ -35,13 +37,12 @@ const Header: React.FC = () => {
             onClick={() => handleNavClick('home')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            data-testid="logo-button"
           >
             AA
           </motion.button>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-4">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -49,31 +50,33 @@ const Header: React.FC = () => {
                 onClick={() => handleNavClick(item.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid={`nav-${item.id}`}
               >
                 {item.label}
               </motion.button>
             ))}
+
+            <motion.button
+              onClick={toggleTheme}
+              className="ml-4 px-3 py-1 border rounded hover:bg-secondary transition-colors"
+            >
+              {theme === 'light' && '☀️ Light'}
+              {theme === 'dark' && '🌙 Dark'}
+              {theme === 'beach' && '🏖️ Beach'}
+            </motion.button>
           </div>
-          
-          {/* Mobile Menu Button */}
+
+          {/* Mobile Menu */}
           <motion.button
             className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            data-testid="mobile-menu-button"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
         </div>
       </div>
-      
-      {/* Mobile Navigation */}
+
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -90,7 +93,6 @@ const Header: React.FC = () => {
                   className="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-secondary transition-colors"
                   onClick={() => handleNavClick(item.id)}
                   whileHover={{ x: 8 }}
-                  data-testid={`mobile-nav-${item.id}`}
                 >
                   {item.label}
                 </motion.button>
