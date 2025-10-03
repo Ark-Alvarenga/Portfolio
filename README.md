@@ -44,6 +44,9 @@
 /server # Node.js/Express backend
 /dist/public # Production build output
 
+yaml
+Copiar código
+
 ---
 
 ## 🚀 Getting Started
@@ -57,12 +60,10 @@ cd portfolio
 bash
 
 npm install
-
 3. Run Development Server
 bash
 
 npm run dev
-
 Frontend available at: http://localhost:3000
 
 Backend server running at port: 5000 (for API mocks)
@@ -72,7 +73,6 @@ bash
 
 npm run build
 npm start
-
 🌐 Deployment
 This portfolio is ready to be deployed on Vercel or any Node.js compatible hosting. Steps for Vercel:
 
@@ -94,4 +94,6 @@ Email: ark.alvarenga@example.com
 
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+© 2025 Archimedes Alvarenga
 ```
