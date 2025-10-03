@@ -1,11 +1,5 @@
 # Archimedes Alvarenga - Portfolio
 
-![Portfolio Screenshot](./screenshot.png)
-
-[![Website Status](https://img.shields.io/website?up_color=green&up_message=Online&url=https%3A%2F%2Fyour-portfolio-url.vercel.app)](https://your-portfolio-url.vercel.app)  
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
-[![GitHub stars](https://img.shields.io/github/stars/Ark-Alvarenga/portfolio?style=social)](https://github.com/Ark-Alvarenga/portfolio/stargazers)
-
 > Personal portfolio website showcasing skills, projects, and technical expertise as a **Full-Stack Web Developer**. Built with **React, Next.js, TypeScript, and TailwindCSS**.
 
 ---
@@ -45,7 +39,6 @@
 /dist/public # Production build output
 
 yaml
-Copiar código
 
 ---
 
@@ -56,23 +49,32 @@ Copiar código
 ```bash
 git clone git@github.com:Ark-Alvarenga/portfolio.git
 cd portfolio
-2. Install Dependencies
-bash
+```
+
+### 2. Install Dependencies
+
+```bash
 
 npm install
-3. Run Development Server
-bash
+```
 
+### 3. Run Development Server
+
+```bash
 npm run dev
-Frontend available at: http://localhost:3000
+```
 
+Frontend available at: http://localhost:3000
 Backend server running at port: 5000 (for API mocks)
 
-4. Build for Production
-bash
+### 4. Build for Production
+
+```bash
 
 npm run build
 npm start
+```
+
 🌐 Deployment
 This portfolio is ready to be deployed on Vercel or any Node.js compatible hosting. Steps for Vercel:
 
@@ -90,10 +92,9 @@ GitHub: https://github.com/Ark-Alvarenga
 
 LinkedIn: https://www.linkedin.com/in/archimedes-alvarenga/
 
-Email: ark.alvarenga@example.com
+Email: ark.alvarenga@gmail.com
 
 📄 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 © 2025 Archimedes Alvarenga
-```
