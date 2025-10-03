@@ -33,12 +33,12 @@
 
 ## 📂 Project Structure
 
-/client # Frontend source
-/src # React components, pages, assets
-/server # Node.js/Express backend
-/dist/public # Production build output
-
-yaml
+```bash
+/client           # Frontend source
+/src              # React components, pages, assets
+/server           # Node.js/Express backend
+/dist/public      # Production build output
+```
 
 ---
 
