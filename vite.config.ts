@@ -14,7 +14,7 @@ export default defineConfig({
   // root removido, agora o Vite usa a raiz do projeto
   base: './', // caminhos relativos
   build: {
-    outDir: path.resolve(__dirname, "dist/public"), // saída final
+    outDir: path.resolve(__dirname, "dist"), // saída final
     emptyOutDir: true,
   },
 });
