@@ -6,16 +6,14 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // sua pasta src deve existir na raiz
+      "@": path.resolve(__dirname, "src"),          // ajuste se você tiver pasta src
       "@shared": path.resolve(__dirname, "shared"),
       "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  // root removido, agora o Vite usa a raiz do projeto
-  base: './', // caminhos relativos
+  base: "/", // URLs absolutas para assets, evita erro de MIME type
   build: {
-    outDir: path.resolve(__dirname, "dist"), // saída final
+    outDir: "dist",
     emptyOutDir: true,
   },
 });
-
