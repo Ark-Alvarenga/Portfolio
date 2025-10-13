@@ -25,11 +25,11 @@ const HeroSection: React.FC = () => {
           </motion.h1>
 
           <motion.h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 gradient-text px-2" variants={slideUpVariants}>
-            Full-Stack Web Developer | React • Next.js • TypeScript • AWS
+            Full-Stack Web Developer | React • Next.js • Node.js • TypeScript • AWS
           </motion.h2>
 
           <motion.p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-10" variants={slideUpVariants}>
-            I build scalable, modern applications powered by React, Next.js, and cloud technologies.
+            I build scalable, modern applications powered by React, Node.js, Next.js, and cloud technologies.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row gap-4 justify-center items-center" variants={slideUpVariants}>
